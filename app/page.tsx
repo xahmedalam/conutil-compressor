@@ -187,6 +187,7 @@ export default function Home() {
         <CompressionSettingsCard
           initialSettings={initialSettings}
           onDone={handleSettingsDone}
+          imagesLength={images.length}
         />
       </section>
       {/* Compressed Results */}

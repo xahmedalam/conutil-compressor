@@ -21,11 +21,13 @@ import { Slider } from "../ui/slider";
 type Props = {
   initialSettings: TCompressionSettings;
   onDone: (settings: TCompressionSettings) => void;
+  imagesLength?: number;
 };
 
 export default function CompressionSettingsCard({
   onDone,
   initialSettings,
+  imagesLength = 0,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [settings, setSettings] =
@@ -156,7 +158,7 @@ export default function CompressionSettingsCard({
       </div>
       <Separator />
       {/* Done Button */}
-      <Button onClick={() => onDone(settings)}>
+      <Button onClick={() => onDone(settings)} disabled={imagesLength === 0}>
         <Check />
         Done
       </Button>
