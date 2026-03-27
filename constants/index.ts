@@ -1,8 +1,8 @@
 export const GITHUB_FEEDBACK_URL =
-  "https://github.com/mahmedalam/conutil/issues";
-export const GITHUB_REPO_URL = "https://github.com/mahmedalam/conutil";
-export const X_URL = "https://x.com/mahmedalamdev";
-export const AUTHOR_NAME = "Ahmed Alam";
+  "https://github.com/mahmedalam/conutil/issues" as const;
+export const GITHUB_REPO_URL = "https://github.com/mahmedalam/conutil" as const;
+export const X_URL = "https://x.com/mahmedalamdev" as const;
+export const AUTHOR_NAME = "Ahmed Alam" as const;
 
 export const navLinks = [
   {
@@ -19,7 +19,7 @@ export const navLinks = [
     href: GITHUB_REPO_URL,
     newTab: true,
   },
-];
+] as const;
 
 export const footerLinks = [
   {
@@ -30,7 +30,7 @@ export const footerLinks = [
     name: "Legal",
     href: "/legal",
   },
-];
+] as const;
 
 export const quickPresets = [
   {
