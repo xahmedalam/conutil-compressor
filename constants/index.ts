@@ -1,6 +1,7 @@
 export const GITHUB_FEEDBACK_URL =
-  "https://github.com/mahmedalam/conutil/issues" as const;
-export const GITHUB_REPO_URL = "https://github.com/mahmedalam/conutil" as const;
+  "https://github.com/mahmedalam/conutil-compressor/issues" as const;
+export const GITHUB_REPO_URL =
+  "https://github.com/mahmedalam/conutil-compressor" as const;
 export const X_URL = "https://x.com/mahmedalamdev" as const;
 export const AUTHOR_NAME = "Ahmed Alam" as const;
 
@@ -85,3 +86,28 @@ export const quickPresets = [
 ] as const;
 
 export const outputFormats = ["jpeg", "webp"] as const;
+
+export const faqs = [
+  {
+    question: "Are my images uploaded to any server?",
+    answer:
+      "No — all processing happens entirely in your browser. Your images never leave your device.",
+  },
+  {
+    question: "Which formats are supported?",
+    answer: "CONUTIL COMPRESSOR supports JPEG, PNG, WebP, and more.",
+  },
+  {
+    question: "Can I compress multiple images at once?",
+    answer: "Yes! Simply drag and drop a batch of images for bulk compression.",
+  },
+  {
+    question: "Is ConUtil free to use?",
+    answer: "Absolutely — it's free and open source under the MIT License.",
+  },
+  {
+    question: "Can I resize images too?",
+    answer:
+      "Yes, ConUtil includes optional resizing with handy presets like HD, 2K, 4K, and web-optimized.",
+  },
+] as const;

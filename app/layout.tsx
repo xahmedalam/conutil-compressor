@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ConUtil",
+  title: "CONUTIL COMPRESSOR",
   description:
     "An open-source browser-based tool to compress, convert, and resize images in bulk, all processed locally for maximum privacy.",
 };
