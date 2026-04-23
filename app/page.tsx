@@ -5,7 +5,7 @@ import ImageCarousel from "@/components/shared/image-carousel";
 import StatisticsSection from "@/components/shared/statistics-section";
 import UploadBox from "@/components/shared/upload-box";
 import { Button } from "@/components/ui/button";
-import { quickPresets } from "@/constants";
+import { quickPresets, X_URL } from "@/constants";
 import { processAllImages } from "@/core/compressor";
 import JSZip from "jszip";
 import { ArrowDownToLine, FileArchive, Loader2 } from "lucide-react";
@@ -233,14 +233,14 @@ export default function Home() {
           )}
         </Button>
       </section>
-      {/* Follow Us */}
+      {/* Follow me */}
       <section>
         <div className="bg-card border-t border-b border-foreground/25 p-9 space-y-5 lg:px-14 lg:py-11 lg:space-y-6">
-          <h2 className="w-fit normal-case">Follow us on X</h2>
+          <h2 className="w-fit normal-case">Follow me on X</h2>
           <div className="font-medium *:text-primary">
             Ahmed |{" "}
-            <Link href="https://x.com/mahmedalamdev" target="_blank">
-              @mahmedalamdev
+            <Link href={X_URL} target="_blank">
+              @xahmedalam
             </Link>
           </div>
         </div>

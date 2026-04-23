@@ -1,7 +1,7 @@
 export const GITHUB_FEEDBACK_URL =
   "https://github.com/mahmedalam/conutil/issues";
 export const GITHUB_REPO_URL = "https://github.com/mahmedalam/conutil";
-export const X_URL = "https://x.com/mahmedalamdev";
+export const X_URL = "https://x.com/xahmedalam";
 export const AUTHOR_NAME = "Ahmed Alam";
 
 export const navLinks = [
