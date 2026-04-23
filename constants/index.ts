@@ -35,28 +35,28 @@ export const footerLinks = [
 export const quickPresets = [
   {
     name: "Best",
-    quality: 80,
+    quality: 95,
     format: "jpeg",
     maxWidth: "",
     maxHeight: "",
   },
   {
     name: "HD Best",
-    quality: 80,
+    quality: 95,
     format: "jpeg",
     maxWidth: 1920,
     maxHeight: 1920,
   },
   {
     name: "2K Best",
-    quality: 80,
+    quality: 95,
     format: "jpeg",
     maxWidth: 2560,
     maxHeight: 2560,
   },
   {
     name: "4K Best",
-    quality: 80,
+    quality: 95,
     format: "jpeg",
     maxWidth: 3840,
     maxHeight: 3840,
@@ -77,7 +77,7 @@ export const quickPresets = [
   },
   {
     name: "Web Optimized",
-    quality: 75,
+    quality: 95,
     format: "webp",
     maxWidth: 1920,
     maxHeight: 1920,
