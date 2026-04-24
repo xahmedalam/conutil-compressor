@@ -69,11 +69,11 @@ export const quickPresets = [
     maxHeight: 1280,
   },
   {
-    name: "Heavy",
+    name: "Balanced",
     quality: 85,
     format: "jpeg",
-    maxWidth: 3840,
-    maxHeight: 3840,
+    maxWidth: 2560,
+    maxHeight: 2560,
   },
   {
     name: "Web Optimized",
