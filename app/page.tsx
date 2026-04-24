@@ -84,9 +84,17 @@ export default function Home() {
     for (const image of compressedImages) {
       const link = document.createElement("a");
       const url = URL.createObjectURL(image.blob);
-      const baseName = image.name.split(".").slice(0, -1).join(".");
+      const nameArray = image.name.split(".");
+      const baseName = nameArray.slice(0, -1).join(".");
+      const ext = nameArray[nameArray.length - 1];
       link.href = url;
-      link.download = `${baseName}.${initialSettings.format}`;
+
+      if (ext === "jpg") {
+        link.download = `${baseName}.jpg`;
+      } else {
+        link.download = `${baseName}.${initialSettings.format}`;
+      }
+
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -108,8 +116,16 @@ export default function Home() {
       const filenameCount = new Map<string, number>();
 
       for (const image of compressedImages) {
-        const baseName = image.name.split(".").slice(0, -1).join(".");
-        let filename = `${baseName}.${initialSettings.format}`;
+        let filename = "";
+        const nameArray = image.name.split(".");
+        const baseName = nameArray.slice(0, -1).join(".");
+        const ext = nameArray[nameArray.length - 1];
+
+        if (ext === "jpg") {
+          filename = `${baseName}.jpg`;
+        } else {
+          filename = `${baseName}.${initialSettings.format}`;
+        }
 
         if (filenameCount.has(filename)) {
           const count = filenameCount.get(filename) ?? 1;
