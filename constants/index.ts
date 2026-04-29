@@ -13,6 +13,7 @@ export const navLinks = [
   {
     name: "FAQ",
     href: "/#faq",
+    newTab: false,
   },
   {
     name: "GitHub",
