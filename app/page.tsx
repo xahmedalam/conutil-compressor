@@ -1,6 +1,7 @@
 "use client";
 
 import CompressionSettingsCard from "@/components/shared/compression-settings-card";
+import FaqSection from "@/components/shared/faq-section";
 import ImageCarousel from "@/components/shared/image-carousel";
 import StatisticsSection from "@/components/shared/statistics-section";
 import UploadBox from "@/components/shared/upload-box";
@@ -261,6 +262,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* FAQs */}
+      <FaqSection />
     </main>
   );
 }
