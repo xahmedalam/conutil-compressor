@@ -27,9 +27,7 @@ export default function UploadBox({
           </span>
           <Button className="w-fit">Choose Files</Button>
           <p className="text-muted-foreground">
-            <p className="text-muted-foreground">
-              Supports JPEG, PNG, WebP, etc.
-            </p>
+            Supports JPEG, PNG, WebP, etc.
           </p>
           <div
             className={cn(
