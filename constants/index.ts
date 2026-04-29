@@ -2,7 +2,7 @@ export const GITHUB_FEEDBACK_URL =
   "https://github.com/xahmedalam/conutil/issues" as const;
 export const GITHUB_REPO_URL = "https://github.com/xahmedalam/conutil" as const;
 export const X_URL = "https://x.com/xahmedalam" as const;
-export const AUTHOR_NAME = "Ahmed Alam" as const;
+export const AUTHOR_NAME = "Ahmed" as const;
 
 export const navLinks = [
   {
