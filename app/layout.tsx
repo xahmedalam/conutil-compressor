@@ -2,11 +2,11 @@ import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "ConUtil",
   description:
-    "An open-source browser-based tool to compress, convert, and resize images in bulk, all processed locally for maximum privacy.",
+    "The only local image compressor that doesn't suck or get you into subscription hell, I made this because I was annoyed with popups, subscription, and uploading my images to random sites for just to compress, It's a basic tool that should be local and free.",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "antialiased")}>
+      <body className={cn(archivo.className, "antialiased")}>
         <Header />
         {children}
         <Footer />

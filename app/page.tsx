@@ -187,9 +187,9 @@ export default function Home() {
           COMPRESSOR
         </h1>
         <p>
-          Your private image compressor, auto resizer, and format converter, all
-          in one toolkit to boost website conversions or save cloud and device
-          storage.
+          {
+            "The only local image compressor that doesn't suck or get you into subscription hell."
+          }
         </p>
       </section>
       {/* Upload Box */}
@@ -252,7 +252,7 @@ export default function Home() {
       </section>
       {/* Follow me */}
       <section>
-        <div className="bg-card border-t border-b border-foreground/25 p-9 space-y-5 lg:px-14 lg:py-11 lg:space-y-6">
+        <div className="bg-card border-t border-b p-9 space-y-5 lg:px-14 lg:py-11 lg:space-y-6">
           <h2 className="w-fit normal-case">Follow me on X</h2>
           <div className="font-medium *:text-primary">
             {AUTHOR_NAME} |{" "}
