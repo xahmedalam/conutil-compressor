@@ -267,8 +267,8 @@ export default function Home() {
                 className="size-16 rounded-full"
               />
               <div className="-space-y-0.5">
-                <div className="text-xl font-medium">Ahmed Alam</div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-lg sm:text-xl font-medium">Ahmed Alam</div>
+                <div className="text-sm text-muted-foreground leading-tight">
                   Full-stack Developer
                 </div>
               </div>
