@@ -2,12 +2,9 @@
 
 The only local image compressor that doesn't suck or get you into subscription hell.
 
-<video autoplay loop controls>
-  <source src="/demo.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+[demo.webm](https://github.com/user-attachments/assets/631be8f6-4f1f-4381-911a-4c7fa72d395e)
 
-[![Download Button](/readme-btn.svg)](https://conutil.com)
+[![Download Button](/public/readme-btn.svg)](https://conutil.com)
 
 ## Why i made this?
 
