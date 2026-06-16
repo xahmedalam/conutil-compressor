@@ -6,10 +6,16 @@ import ImageCarousel from "@/components/shared/image-carousel";
 import StatisticsSection from "@/components/shared/statistics-section";
 import UploadBox from "@/components/shared/upload-box";
 import { Button } from "@/components/ui/button";
-import { AUTHOR_NAME, quickPresets, X_URL } from "@/constants";
+import { LINKEDIN_URL, quickPresets, X_URL } from "@/constants";
 import { processAllImages } from "@/core/compressor";
 import JSZip from "jszip";
-import { ArrowDownToLine, FileArchive, Loader2 } from "lucide-react";
+import {
+  ArrowDownToLine,
+  FileArchive,
+  Linkedin,
+  Loader2,
+  Twitter,
+} from "lucide-react";
 import Link from "next/link";
 import { startTransition, useCallback, useMemo, useRef, useState } from "react";
 
@@ -250,16 +256,37 @@ export default function Home() {
           )}
         </Button>
       </section>
-      {/* Follow me */}
+      {/* About */}
       <section>
         <div className="bg-card border-t border-b p-9 space-y-5 lg:px-14 lg:py-11 lg:space-y-6">
-          <h2 className="w-fit normal-case">Follow me on X</h2>
-          <div className="font-medium *:text-primary">
-            {AUTHOR_NAME} |{" "}
-            <Link href={X_URL} target="_blank">
-              @xahmedalam
-            </Link>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img
+                src="/founder.jpg"
+                alt="Founder"
+                className="size-16 rounded-full"
+              />
+              <div className="-space-y-0.5">
+                <div className="text-xl font-medium">Ahmed Alam</div>
+                <div className="text-sm text-muted-foreground">
+                  Full-stack Developer
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 *:hover:opacity-75 *:transition-opacity">
+              <Link href={X_URL} target="_blank">
+                <Twitter />
+              </Link>
+              <Link href={LINKEDIN_URL} target="_blank">
+                <Linkedin />
+              </Link>
+            </div>
           </div>
+          <p className="text-xl text-primary text-left">
+            I made this because I was annoyed with popups, subscription, and
+            uploading my images to random sites for just to compress. It{"'"}s a
+            basic tool that should be local and free.
+          </p>
         </div>
       </section>
       {/* FAQs */}
