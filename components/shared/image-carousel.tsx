@@ -10,9 +10,11 @@ import {
   useRef,
   useState,
 } from "react";
+import type { TouchEvent } from "react";
 import { Button } from "../ui/button";
 
 const PAGE_SIZE = 6;
+const MIN_SWIPE_DISTANCE = 50;
 
 export default function ImageCarousel({
   files,
@@ -24,6 +26,8 @@ export default function ImageCarousel({
   const [page, setPage] = useState(0);
   const instanceId = useId();
   const urlCacheRef = useRef(new Map<string, string>());
+  const touchStartXRef = useRef<number | null>(null);
+  const touchStartYRef = useRef<number | null>(null);
   const [items, setItems] = useState<
     Array<{ file: File | TProcessedImage; url: string }>
   >([]);
@@ -44,6 +48,51 @@ export default function ImageCarousel({
       return `${prefix}:processed:${file.name}:${file.size}:${file.type}`;
     },
     [instanceId, type],
+  );
+
+  const goToPreviousPage = useCallback(() => {
+    setPage((currentPage) => Math.max(currentPage - 1, 0));
+  }, []);
+
+  const goToNextPage = useCallback(() => {
+    setPage((currentPage) =>
+      Math.min(currentPage + 1, Math.max(totalPages - 1, 0)),
+    );
+  }, [totalPages]);
+
+  const handleTouchStart = useCallback((event: TouchEvent) => {
+    const touch = event.touches[0];
+    touchStartXRef.current = touch.clientX;
+    touchStartYRef.current = touch.clientY;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (event: TouchEvent) => {
+      const startX = touchStartXRef.current;
+      const startY = touchStartYRef.current;
+      touchStartXRef.current = null;
+      touchStartYRef.current = null;
+
+      if (startX === null || startY === null) return;
+
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+
+      if (
+        Math.abs(deltaX) < MIN_SWIPE_DISTANCE ||
+        Math.abs(deltaX) < Math.abs(deltaY)
+      ) {
+        return;
+      }
+
+      if (deltaX > 0) {
+        goToPreviousPage();
+      } else {
+        goToNextPage();
+      }
+    },
+    [goToNextPage, goToPreviousPage],
   );
 
   useEffect(() => {
@@ -76,7 +125,11 @@ export default function ImageCarousel({
     <div className="card">
       <h2>{type === "original" ? "Added Images" : "Results"}</h2>
 
-      <ul className="w-fit mx-auto grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
+      <ul
+        className="w-fit mx-auto grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3 touch-pan-y"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {items.map(({ file, url }) => {
           return (
             <li key={getFileKey(file)} className="relative">
@@ -105,7 +158,7 @@ export default function ImageCarousel({
           variant="secondary"
           size="icon"
           disabled={page === 0}
-          onClick={() => setPage((p) => p - 1)}
+          onClick={goToPreviousPage}
         >
           <ChevronLeft />
         </Button>
@@ -118,7 +171,7 @@ export default function ImageCarousel({
           variant="secondary"
           size="icon"
           disabled={page >= totalPages - 1 || files.length === 0}
-          onClick={() => setPage((p) => p + 1)}
+          onClick={goToNextPage}
         >
           <ChevronRight />
         </Button>
