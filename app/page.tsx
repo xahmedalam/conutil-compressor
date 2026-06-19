@@ -17,7 +17,14 @@ import {
   Twitter,
 } from "lucide-react";
 import Link from "next/link";
-import { startTransition, useCallback, useMemo, useRef, useState } from "react";
+import {
+  startTransition,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 export default function Home() {
   const [images, setImages] = useState<File[]>([]);
@@ -31,6 +38,7 @@ export default function Home() {
     [],
   );
   const processIdRef = useRef(0);
+  const statisticsSectionRef = useRef<HTMLDivElement>(null);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isZipping, setIsZipping] = useState(false);
 
@@ -82,6 +90,15 @@ export default function Home() {
     () => compressedImages.length === 0 || isDownloading || isZipping,
     [compressedImages.length, isDownloading, isZipping],
   );
+
+  useEffect(() => {
+    if (compressedImages.length === 0) return;
+
+    statisticsSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [compressedImages.length]);
 
   const handleDownload = useCallback(async () => {
     if (compressedImages.length === 0) return;
@@ -219,10 +236,12 @@ export default function Home() {
         <ImageCarousel files={compressedImages} type="compressed" />
       </section>
       {/* Statistics */}
-      <StatisticsSection
-        compressedImages={compressedImages}
-        processTime={processTime}
-      />
+      <div ref={statisticsSectionRef}>
+        <StatisticsSection
+          compressedImages={compressedImages}
+          processTime={processTime}
+        />
+      </div>
       {/* Downloads */}
       <section className="space-x-5 space-y-4 text-center grid sm:grid-cols-2">
         <Button onClick={handleDownload} disabled={downloadDisabled}>
