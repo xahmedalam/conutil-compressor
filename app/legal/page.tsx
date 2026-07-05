@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Legal | ConUtil",
+  title: "Legal | ConUtil Compressor",
   description:
-    "Legal information, privacy notes, terms, and license details for ConUtil.",
+    "Legal information, privacy notes, terms, and license details for ConUtil Compressor.",
 };
 
 const sections = [
   {
     title: "Privacy",
-    body: "ConUtil processes images locally in your browser. Your files are not uploaded to our servers by this app. If you open external links, those third-party services may collect information under their own policies.",
+    body: "ConUtil Compressor processes images locally in your browser. Your files are not uploaded to our servers by this app. If you open external links, those third-party services may collect information under their own policies.",
   },
   {
     title: "Use of the Tool",
-    body: "You are responsible for the files you process and download. Please make sure you have the right to use, modify, compress, or convert any images you add to ConUtil.",
+    body: "You are responsible for the files you process and download. Please make sure you have the right to use, modify, compress, or convert any images you add to ConUtil Compressor.",
   },
   {
     title: "No Warranty",
-    body: "ConUtil is provided as-is. We do not guarantee that compression results will meet every requirement, preserve every metadata field, or be suitable for a particular purpose.",
+    body: "ConUtil Compressor is provided as-is. We do not guarantee that compression results will meet every requirement, preserve every metadata field, or be suitable for a particular purpose.",
   },
   {
     title: "Limitation of Liability",
@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: "License",
-    body: "ConUtil is open source under the MIT License. You can review the project repository for the full license text and source code.",
+    body: "ConUtil Compressor is open source under the MIT License. You can review the project repository for the full license text and source code.",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function LegalPage() {
       <section className="flex flex-col items-center gap-4">
         <h1>LEGAL</h1>
         <p>
-          Simple legal information for ConUtil, including privacy, terms of use,
+          Simple legal information for ConUtil Compressor, including privacy, terms of use,
           warranty, liability, and license notes.
         </p>
       </section>

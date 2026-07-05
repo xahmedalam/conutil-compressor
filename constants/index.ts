@@ -1,6 +1,6 @@
 export const GITHUB_FEEDBACK_URL =
-  "https://github.com/xahmedalam/conutil/issues" as const;
-export const GITHUB_REPO_URL = "https://github.com/xahmedalam/conutil" as const;
+  "https://github.com/xahmedalam/conutil-compressor/issues" as const;
+export const GITHUB_REPO_URL = "https://github.com/xahmedalam/conutil-compressor" as const;
 export const X_URL = "https://x.com/xahmedalam" as const;
 export const LINKEDIN_URL = "https://linkedin.com/in/xahmedalam" as const;
 export const AUTHOR_NAME = "Ahmed" as const;
@@ -101,10 +101,10 @@ export const faqs = [
   },
   {
     question: "Which formats are supported?",
-    answer: "CONUTIL supports JPEG, PNG, WebP, and more.",
+    answer: "ConUtil Compressor supports JPEG, PNG, WebP, and more.",
   },
   {
-    question: "Is CONUTIL free?",
+    question: "Is ConUtil Compressor free?",
     answer: "Absolutely it's free and open source under the MIT License.",
   },
 ] as const;
