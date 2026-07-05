@@ -16,6 +16,16 @@ export const metadata: Metadata = {
   title: "ConUtil Compressor - IN BROWSER BULK IMAGE COMPRESSOR",
   description:
     "The only local image compressor that doesn't suck or get you into subscription hell, I made this because I was annoyed with popups, subscription, and uploading my images to random sites for just to compress, It's a basic tool that should be local and free.",
+  openGraph: {
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "ConUtil Compressor - IN BROWSER BULK IMAGE COMPRESSOR",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
