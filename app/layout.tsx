@@ -13,7 +13,7 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "ConUtil - IN BROWSER BULK IMAGE COMPRESSOR",
+  title: "ConUtil Compressor - IN BROWSER BULK IMAGE COMPRESSOR",
   description:
     "The only local image compressor that doesn't suck or get you into subscription hell, I made this because I was annoyed with popups, subscription, and uploading my images to random sites for just to compress, It's a basic tool that should be local and free.",
 };
