@@ -1,6 +1,7 @@
 export const GITHUB_FEEDBACK_URL =
   "https://github.com/xahmedalam/conutil-compressor/issues" as const;
-export const GITHUB_REPO_URL = "https://github.com/xahmedalam/conutil-compressor" as const;
+export const GITHUB_REPO_URL =
+  "https://github.com/xahmedalam/conutil-compressor" as const;
 export const X_URL = "https://x.com/xahmedalam" as const;
 export const LINKEDIN_URL = "https://linkedin.com/in/xahmedalam" as const;
 export const AUTHOR_NAME = "Ahmed" as const;

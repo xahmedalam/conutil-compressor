@@ -35,8 +35,8 @@ export default function LegalPage() {
       <section className="flex flex-col items-center gap-4">
         <h1>LEGAL</h1>
         <p>
-          Simple legal information for ConUtil Compressor, including privacy, terms of use,
-          warranty, liability, and license notes.
+          Simple legal information for ConUtil Compressor, including privacy,
+          terms of use, warranty, liability, and license notes.
         </p>
       </section>
 
