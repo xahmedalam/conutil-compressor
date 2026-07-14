@@ -1,10 +1,10 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { cn } from "@/lib/utils";
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "@/providers/posthog";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -36,10 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(archivo.className, "antialiased")}>
-        <Header />
-        {children}
-        <Footer />
-        <Analytics />
+        <PostHogProvider>
+          <Header />
+          {children}
+          <Footer />
+        </PostHogProvider>
       </body>
     </html>
   );
