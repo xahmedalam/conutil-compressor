@@ -24,12 +24,14 @@ interface StatisticsSectionProps {
   compressedImages: TProcessedImage[];
   processTime: number;
   className?: string;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
 export default function StatisticsSection({
   compressedImages,
   processTime,
   className = "",
+  ref,
 }: StatisticsSectionProps) {
   // Sum original sizes
   const totalOriginalSize = compressedImages.reduce(
@@ -53,7 +55,7 @@ export default function StatisticsSection({
       : 0;
 
   return (
-    <section className={cn("block text-center space-y-5", className)}>
+    <section ref={ref} className={cn("block text-center space-y-5", className)}>
       <h2 className="h2">Compression Statistics</h2>
       {/* Stats grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">

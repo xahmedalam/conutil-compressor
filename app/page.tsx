@@ -236,12 +236,11 @@ export default function Home() {
         <ImageCarousel files={compressedImages} type="compressed" />
       </section>
       {/* Statistics */}
-      <div ref={statisticsSectionRef}>
-        <StatisticsSection
-          compressedImages={compressedImages}
-          processTime={processTime}
-        />
-      </div>
+      <StatisticsSection
+        ref={statisticsSectionRef}
+        compressedImages={compressedImages}
+        processTime={processTime}
+      />
       {/* Downloads */}
       <section className="space-x-5 space-y-4 text-center grid sm:grid-cols-2">
         <Button onClick={handleDownload} disabled={downloadDisabled}>
