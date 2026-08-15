@@ -1,8 +1,11 @@
 "use client";
 
+import { Magnetic } from "@/components/motion-primitives/magnetic";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 import CompressionSettingsCard from "@/components/shared/compression-settings-card";
 import FaqSection from "@/components/shared/faq-section";
 import ImageCarousel from "@/components/shared/image-carousel";
+import Reveal from "@/components/shared/reveal";
 import StatisticsSection from "@/components/shared/statistics-section";
 import UploadBox from "@/components/shared/upload-box";
 import { Button } from "@/components/ui/button";
@@ -202,39 +205,35 @@ export default function Home() {
     <main className="min-h-screen container mx-auto flex flex-col items-center gap-11 px-4 py-11 md:p-14">
       {/* Hero Section */}
       <section className="flex flex-col gap-4">
-        <h1>
-          IN BROWSER
-          <br />
-          BULK IMAGE
-          <br />
-          COMPRESSOR
-        </h1>
-        <p>
+        <TextEffect as="h1" per="line" preset="fade">
+          {"IN BROWSER\nBULK IMAGE\nCOMPRESSOR"}
+        </TextEffect>
+        <TextEffect as="p" per="word" preset="fade" delay={0.4}>
           {
             "The only local image compressor that doesn't suck or get you into subscription hell."
           }
-        </p>
+        </TextEffect>
       </section>
       {/* Upload Box */}
-      <section>
+      <Reveal>
         <UploadBox onDrop={handleDrop} />
-      </section>
+      </Reveal>
       {/* Added Images */}
-      <section>
+      <Reveal>
         <ImageCarousel files={images} type="original" />
-      </section>
+      </Reveal>
       {/* Settings */}
-      <section>
+      <Reveal>
         <CompressionSettingsCard
           initialSettings={initialSettings}
           onDone={handleSettingsDone}
           imagesLength={images.length}
         />
-      </section>
+      </Reveal>
       {/* Compressed Results */}
-      <section>
+      <Reveal>
         <ImageCarousel files={compressedImages} type="compressed" />
-      </section>
+      </Reveal>
       {/* Statistics */}
       <StatisticsSection
         ref={statisticsSectionRef}
@@ -242,40 +241,49 @@ export default function Home() {
         processTime={processTime}
       />
       {/* Downloads */}
-      <section className="space-x-5 space-y-4 text-center grid sm:grid-cols-2">
-        <Button onClick={handleDownload} disabled={downloadDisabled}>
-          {isDownloading && !isZipping ? (
-            <>
-              <Loader2 className="animate-spin" />
-              Downloading...
-            </>
-          ) : (
-            <>
-              <ArrowDownToLine />
-              Download
-            </>
-          )}
-        </Button>
-        <Button
-          variant="outline"
-          onClick={handleDownloadZip}
-          disabled={downloadDisabled}
-        >
-          {isZipping ? (
-            <>
-              <Loader2 className="animate-spin" />
-              Creating Zip...
-            </>
-          ) : (
-            <>
-              <FileArchive />
-              Download as Zip
-            </>
-          )}
-        </Button>
-      </section>
+      <Reveal className="grid sm:grid-cols-2 gap-4">
+        <Magnetic intensity={0.4}>
+          <Button
+            className="w-full"
+            onClick={handleDownload}
+            disabled={downloadDisabled}
+          >
+            {isDownloading && !isZipping ? (
+              <>
+                <Loader2 className="animate-spin" />
+                Downloading...
+              </>
+            ) : (
+              <>
+                <ArrowDownToLine />
+                Download
+              </>
+            )}
+          </Button>
+        </Magnetic>
+        <Magnetic intensity={0.4}>
+          <Button
+            variant="outline"
+            className="w-full"
+            onClick={handleDownloadZip}
+            disabled={downloadDisabled}
+          >
+            {isZipping ? (
+              <>
+                <Loader2 className="animate-spin" />
+                Creating Zip...
+              </>
+            ) : (
+              <>
+                <FileArchive />
+                Download as Zip
+              </>
+            )}
+          </Button>
+        </Magnetic>
+      </Reveal>
       {/* About */}
-      <section>
+      <Reveal>
         <div className="bg-card border-t border-b p-9 space-y-5 lg:px-14 lg:py-11 lg:space-y-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -306,7 +314,7 @@ export default function Home() {
             basic tool that should be local and free.
           </p>
         </div>
-      </section>
+      </Reveal>
       {/* FAQs */}
       <FaqSection />
     </main>

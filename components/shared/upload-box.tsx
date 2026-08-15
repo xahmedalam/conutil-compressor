@@ -1,6 +1,7 @@
 "use client";
 
 import DashedBoxSvg from "@/assets/dashed-box-svg";
+import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { cn } from "@/lib/utils";
 import { ImageUp } from "lucide-react";
 import Dropzone from "react-dropzone";
@@ -25,7 +26,9 @@ export default function UploadBox({
           <span className="text-2xl tracking-[-0.6px] text-foreground/75 sm:text-3xl">
             or
           </span>
-          <Button className="w-fit">Choose Files</Button>
+          <Magnetic intensity={0.4}>
+            <Button className="w-fit">Choose Files</Button>
+          </Magnetic>
           <p className="text-muted-foreground">
             Supports JPEG, PNG, WebP, etc.
           </p>
