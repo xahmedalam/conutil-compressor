@@ -205,7 +205,7 @@ export default function Home() {
     <main className="min-h-screen container mx-auto flex flex-col items-center gap-11 px-4 py-11 md:p-14">
       {/* Hero Section */}
       <section className="flex flex-col gap-4">
-        <TextEffect as="h1" per="line" preset="fade">
+        <TextEffect as="h1" per="line" preset="fade-in-blur">
           {"IN BROWSER\nBULK IMAGE\nCOMPRESSOR"}
         </TextEffect>
         <TextEffect as="p" per="word" preset="fade" delay={0.4}>
