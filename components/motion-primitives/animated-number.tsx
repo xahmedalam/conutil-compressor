@@ -8,6 +8,7 @@ export type AnimatedNumberProps = {
   className?: string;
   springOptions?: SpringOptions;
   format?: (value: number) => string;
+  active?: boolean;
 };
 
 export function AnimatedNumber({
@@ -15,13 +16,21 @@ export function AnimatedNumber({
   className,
   springOptions,
   format = (current) => Math.round(current).toLocaleString(),
+  active = true,
 }: AnimatedNumberProps) {
-  const spring = useSpring(value, springOptions);
+  const spring = useSpring(0, {
+    bounce: 0,
+    stiffness: 80,
+    damping: 18,
+    ...springOptions,
+  });
   const display = useTransform(spring, (current) => format(current));
 
   useEffect(() => {
-    spring.set(value);
-  }, [spring, value]);
+    if (active) {
+      spring.set(value);
+    }
+  }, [spring, value, active]);
 
   return (
     <motion.span className={cn("tabular-nums", className)}>
