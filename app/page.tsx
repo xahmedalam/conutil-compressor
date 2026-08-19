@@ -28,6 +28,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { toast } from "sonner";
 
 export default function Home() {
   const [images, setImages] = useState<File[]>([]);
@@ -51,6 +52,11 @@ export default function Home() {
       file.type.startsWith("image/"),
     );
     setImages((prev) => [...prev, ...filteredFiles]);
+    if (filteredFiles.length > 0) {
+      toast.success(
+        `${filteredFiles.length} ${filteredFiles.length === 1 ? "file" : "files"} added`,
+      );
+    }
     setCompressedImages([]);
     setProgress(0);
     setProcessTime(0);
