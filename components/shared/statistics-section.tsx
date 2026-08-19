@@ -33,7 +33,7 @@ function StatCard({
   return (
     <div
       className={cn(
-        "rounded-4xl border p-4 flex-col-center bg-card",
+        "rounded-4xl border p-4 flex-col-center bg-card h-full",
         className,
       )}
     >
